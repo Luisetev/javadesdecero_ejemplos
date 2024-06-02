@@ -13,4 +13,8 @@ public class TestString {
 		System.out.println("CharAt a la primera posicion:"+ str.charAt(0));
 	}
 
+	public status char testCharAt(String str) {
+		return str.charAt(0);
+	}
+	
 }
