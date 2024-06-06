@@ -2,6 +2,7 @@ package io.keepcoding.javadesdecero.objetos;
 
 public class test_objetos {
 
+	//todo el static es como el ámbito global
 	public static void main(String[] args) {
 		// miSilla -> objeto o instancia
 		//Silla es la clase
