@@ -144,6 +144,7 @@ public class Calculator extends JFrame implements ActionListener {
             		}
             		else {
             			inputScreen.setText("Error");
+            			return;
             			}
             		break;
             	}
