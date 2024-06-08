@@ -38,11 +38,19 @@ public class MainBank {
 		//Authenticate
 		account.authenticate(dniInput, passInput);
 		
-		System.out.println("Está logeado?" + account.isLogged());
-	
+
 		//get cash
 		account.getcash(50);
+		System.out.println("Current balance: " + account.getBalance());
 	
+		//get Data -> showInfo()
+		System.out.println(account.toString());
+		
+		//income
+		account.income(20);
+		System.out.println("Current balance: " + account.getBalance());
 	}
 
+	
+	
 }

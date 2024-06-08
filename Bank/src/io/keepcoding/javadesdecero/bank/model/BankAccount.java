@@ -24,9 +24,7 @@ public class BankAccount {
 		this.isLogged=false;
 	}
 	
-	public boolean isLogged() {
-		return isLogged;
-	}
+
 
 	public boolean authenticate(
 			String dni,
@@ -45,12 +43,29 @@ public class BankAccount {
 	}
 	*/
 	
-	public void getcash(int quantity) {
-		if(isLogged) {
+	/**
+	 * si puede, deduce el balance y devuelve resultado
+	 * @param quantity cantidad a descontar
+	 * @return si ha tenido éxito
+	 */
+	public boolean getcash(int quantity) {
+		boolean hasSuccess=false;
+		if(isLogged && (balance-quantity>=0)) {
+			hasSuccess=true;
 			balance-=quantity;
 		}
+		return hasSuccess;
 	}
 
+	public boolean income(int quantity) {
+		boolean hasSuccess = false;
+		if (isLogged) {
+			hasSuccess=true;
+			balance+=quantity;
+		}
+		return hasSuccess;
+		
+	}
 	
 	public String getDni() {
 		return dni;
@@ -83,7 +98,16 @@ public class BankAccount {
 		this.balance = balance;
 	}
 	
-	//Getters y setters
+	public boolean isLogged() {
+		return isLogged;
+	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"DNI: %s, Name:%s, Surname: %s, Balance: %s",dni,name,surname,Double.toString(balance));
+				
+	}
 	
 	
 
